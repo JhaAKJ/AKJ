@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aayush Kumar Jha | Portfolio</title>
+  <script src="https://kit.fontawesome.com/4f8a5e6bcd.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #121212;
+      color: #f1f1f1;
+      scroll-behavior: smooth;
+      transition: 0.3s;
+    }
+
+    body.light {
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: #222;
+      color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo span {
+      color: #ff5733;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff5733;
+    }
+
+    #theme-toggle {
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      padding: 50px;
+    }
+
+    .hero h1 span {
+      color: #ffcc00;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff5733;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e74c3c;
+    }
+
+    .about, .skills, .contact {
+      padding: 80px 50px;
+      text-align: center;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .skill-card {
+      background: #222;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      background: #ff5733;
+      color: white;
+    }
+
+    body.light .skill-card {
+      background: #fff;
+      color: #333;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: 1s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 20px;
+      }
+      .skills-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2 class="logo">Aayush<span>Jha</span></h2>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle">☀️</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span id="typing"></span></h1>
+      <p>Student | Web Developer | Tech Enthusiast</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <section id="about" class="about reveal">
+    <h2>About Me</h2>
+    <p>
+      I am a student at <strong>Guru Tegh Bahadur 4th Centenary College</strong>, pursuing 
+      <strong>Bachelor of Technology in CSE-DS (2025–2029)</strong>.
+      I have completed my schooling at <strong>Daisy Dales Senior Secondary School</strong> in 2025.
+    </p>
+  </section>
+
+  <section id="skills" class="skills reveal">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">MySQL</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">Web Development (Frontend)</div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact reveal">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:aayushkumarjhayt@gmail.com">aayushkumarjhayt@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918700136994">+91 8700136994</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/jhaakj" target="_blank">linkedin.com/in/jhaakj</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/akj.aayush" target="_blank">@akj.aayush</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Aayush Kumar Jha | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const text = "Aayush Kumar Jha";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 150);
+      }
+    }
+    window.onload = type;
+
+    function reveal() {
+      const reveals = document.querySelectorAll(".reveal");
+      for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      themeToggle.textContent =
+        document.body.classList.contains("light") ? "🌙" : "☀️";
+    });
+  </script>
+</body>
+</html>
